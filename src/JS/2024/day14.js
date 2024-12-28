@@ -1,5 +1,5 @@
-const inputScraper = require('../helpers/inputScraper')
-const textToInput = require('../helpers/textToInput');
+const inputScraper = require('../TS/2024/helpers/inputScraper')
+const textToInput = require('../TS/2024/helpers/textToInput');
 
 
 const testInformations = {

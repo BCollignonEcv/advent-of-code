@@ -1,5 +1,5 @@
 import day from '../../day.class';
-import * as formaters from '../../helpers/formaters';
+import * as formaters from '../helpers/formaters';
 
 export class V1 extends day {
     constructor(year: number, test: number, isdebug: number) {

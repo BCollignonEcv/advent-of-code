@@ -1,4 +1,4 @@
-import * as scraper from './helpers/scraper'
+import * as scraper from './2024/helpers/scraper'
 
 export default class day {
     private year: number;
