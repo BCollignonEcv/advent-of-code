@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "try": "node build/index.js debug=1",
+    "try": "node build/index.js \"debug=1\"",
     "start": "node build/index.js"
   },
   "author": "",
