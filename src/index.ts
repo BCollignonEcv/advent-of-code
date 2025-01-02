@@ -3,13 +3,13 @@ const args = process.argv.slice(2);
 type Config = {
     year: number;
     day: number;
-    isDebug: number;
+    debug: number;
 };
 
 let conf: Config = {
     year: 0,
     day: 0,
-    isDebug: 0
+    debug: 0
 }
 
 async function launch(): Promise<void> {
@@ -23,6 +23,7 @@ async function launch(): Promise<void> {
 
         const { V1, V2 } = await import(`./${conf.year}/days/day${conf.day}`);
 
+        const isDebug = conf.debug === 1;
         if (V1 || V2) {
             console.log()
             console.log()
@@ -30,7 +31,7 @@ async function launch(): Promise<void> {
             console.log()
 
             if (V1) {
-                let day_V1 = new V1(Number(conf.year), Number(conf.day), conf.isDebug)
+                let day_V1 = new V1(Number(conf.year), Number(conf.day), isDebug)
                 day_V1.init().then(() => {
                     day_V1.run()
                     console.log('V1 : ', day_V1.result);
@@ -38,7 +39,7 @@ async function launch(): Promise<void> {
             }
 
             if (V2) {
-                let day_V2 = new V2(Number(conf.year), Number(conf.day), conf.isDebug)
+                let day_V2 = new V2(Number(conf.year), Number(conf.day), isDebug)
                 day_V2.init().then(() => {
                     day_V2.run()
                     console.log('V2 : ', day_V2.result);
