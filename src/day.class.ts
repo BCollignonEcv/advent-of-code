@@ -3,7 +3,7 @@ import * as scraper from './2024/helpers/scraper'
 export default class day {
     private year: number;
     private test: number;
-    private path: string;
+    private filePath: string;
     private isDebug: number;
 
     public inputs: string;
@@ -15,14 +15,19 @@ export default class day {
         this.year = year;
         this.test = test;
         this.isDebug = isDebug;
-        this.path = `./${this.year}/day${this.test}`;
+        this.filePath = `./${this.year}/day${this.test}`;
         this.inputs = '';
         this.formatedInputs = null;
         this.result = 0;
     }
 
     async init(): Promise<void> {
-        await this.getInputs()
+        if (this.isDebug) {
+            console.log("RUN DEBUG")
+            this.getFakeInputs()
+        } else {
+            await this.getInputs()
+        }
         this.formatInputs();
     }
 
@@ -30,6 +35,7 @@ export default class day {
         this.inputs = await scraper.getHTML(this.year, this.test)
     }
 
+    getFakeInputs(): void { }
     formatInputs(): void { }
     run(): void { }
 }
