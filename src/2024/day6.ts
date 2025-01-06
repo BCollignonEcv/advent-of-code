@@ -1,4 +1,4 @@
-import day from '../../day.class';
+import day from '../day.class';
 import * as formaters from '../helpers/formaters';
 import { Coordinates, toCoordinates, getBoundaries, isInBoundaries, findInMatrix } from '../helpers/matrixHelpers';
 

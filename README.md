@@ -1,6 +1,6 @@
 # Avent of Code
 
-## Compulation
+## Compilation
 
     npx tsc -w
 
@@ -8,6 +8,12 @@
 
     npm run try year=<targetYear> day=<targetDay>
 
+    Exemple : 
+    npm run try year=2024 day=1
+
 ## Perform test
 
-    npm run test year=<targetYear> day=<targetDay>
+    npm run day year=<targetYear> day=<targetDay>
+
+    Exemple : 
+    npm run day year=2024 day=1

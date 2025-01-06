@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "try": "node build/index.js \"debug=1\"",
-    "start": "node build/index.js"
+    "try": "node build/index.js -- \"debug=1\"",
+    "day": "node build/index.js"
   },
   "author": "",
   "license": "ISC",

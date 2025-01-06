@@ -17,11 +17,13 @@ async function launch(): Promise<void> {
         args.forEach(arg => {
             const [key, value] = arg.split('=');
             if (key in conf) {
+                console.log(key)
                 conf[key as keyof Config] = Number(value);
             }
         });
 
-        const { V1, V2 } = await import(`./${conf.year}/days/day${conf.day}`);
+        const { V1, V2 } = await import(`./${conf.year}/day${conf.day}`);
+        const isDebug = conf.debug === 1;
 
         const isDebug = conf.debug === 1;
         if (V1 || V2) {

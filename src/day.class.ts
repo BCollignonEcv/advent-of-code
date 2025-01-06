@@ -1,4 +1,4 @@
-import * as scraper from './2024/helpers/scraper'
+import * as scraper from './helpers/scraper'
 
 export default class day {
     private year: number;
@@ -23,7 +23,6 @@ export default class day {
 
     async init(): Promise<void> {
         if (this.isDebug) {
-            console.log("RUN DEBUG")
             this.getFakeInputs()
         } else {
             await this.getInputs()
@@ -31,11 +30,14 @@ export default class day {
         this.formatInputs();
     }
 
+    getFakeInputs(): void {
+        this.inputs = 'test'
+    }
+
     async getInputs(): Promise<void> {
         this.inputs = await scraper.getHTML(this.year, this.test)
     }
 
-    getFakeInputs(): void { }
     formatInputs(): void { }
     run(): void { }
 }
