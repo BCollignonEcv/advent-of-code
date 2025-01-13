@@ -4,11 +4,12 @@ export default class day {
     private year: number;
     private test: number;
     private filePath: string;
-    private isDebug: number;
-
+    
+    public isDebug: number;
     public inputs: string;
     public formatedInputs: any;
     public result: number;
+    public map: Array<Array<any>>;
 
     // Constructeur
     constructor(year: number, test: number, isDebug: number) {
@@ -19,6 +20,7 @@ export default class day {
         this.inputs = '';
         this.formatedInputs = null;
         this.result = 0;
+        this.map = [];
     }
 
     async init(): Promise<void> {
