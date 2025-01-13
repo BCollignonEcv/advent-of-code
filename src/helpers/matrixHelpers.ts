@@ -1,10 +1,14 @@
 export type Coordinates = [y: number, x: number];
 
-export const directions = {
+export const directions: Record<string, Coordinates> = {
     left: [-1, 0],
     rigth: [1, 0],
-    bottom: [0, -1],
-    top: [0, 1]
+    bottom: [0, 1],
+    top: [0, -1],
+    '<':[-1, 0],
+    '>':[1, 0],
+    'v': [0, 1],
+    '^': [0, -1]
 };
 
 export const getBoundaries = (map: Array<Array<any>>): Array<number> => {
