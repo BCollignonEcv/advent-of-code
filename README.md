@@ -6,7 +6,7 @@
 
 ## Try test
 
-    npm run try year=<targetYear> day=<targetDay>
+    npm run try year=2025 day=1
 
     Exemple : 
     npm run try year=2024 day=1
